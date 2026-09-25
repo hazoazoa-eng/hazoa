@@ -1,12 +1,19 @@
-[
-  {
-    "title": "샘플 영상 1",
-    "description": "구글 드라이브 공유 링크를 그대로 넣으면 됩니다.",
-    "url": "https://drive.google.com/file/d/여기에_파일ID/view?usp=sharing"
-  },
-  {
-    "title": "샘플 영상 2",
-    "description": "파일 ID만 넣어도 됩니다.",
-    "url": "여기에_파일ID"
-  }
-]
+{
+  "board": "2기 디퍼 언브랜딩 살롱 — 논리의 달",
+  "posts": [
+    {
+      "title": "논리 1주차 살롱 : 강의 영상",
+      "items": [
+        { "text": "오늘 강의 - 논리 1회차 : 기호는 어떻게 의미가 되는가" },
+        { "text": "🎬 강의 영상 (논리 1회차)", "url": "https://drive.google.com/file/d/여기에_파일ID/view?usp=sharing" },
+        { "text": "이번 주 도구 - 스킬 여덟 : 뜻과 받는 법과 사용법", "url": "https://drive.google.com/file/d/여기에_파일ID/view?usp=sharing" }
+      ]
+    },
+    {
+      "title": "논리 2주차 살롱 : 강의 영상",
+      "items": [
+        { "text": "🎬 강의 영상 (논리 2회차)", "url": "https://drive.google.com/file/d/여기에_파일ID/view?usp=sharing" }
+      ]
+    }
+  ]
+}
