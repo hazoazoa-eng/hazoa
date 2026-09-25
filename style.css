@@ -1,0 +1,21 @@
+:root { --bg: #fafafa; --fg: #1a1a1a; --muted: #666; --card: #fff; --line: #e3e3e3; --accent: #1a73e8; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #121212; --fg: #eee; --muted: #aaa; --card: #1e1e1e; --line: #333; --accent: #8ab4f8; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, "Noto Sans KR", sans-serif; background: var(--bg); color: var(--fg); }
+header, main { max-width: 960px; margin: 0 auto; padding: 16px; }
+h1 { font-size: 1.5rem; margin: 8px 0; }
+a { color: var(--accent); }
+
+.frame { position: relative; aspect-ratio: 16 / 9; background: #000; border-radius: 8px; overflow: hidden; }
+.frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+#player h2 { margin: 12px 0 4px; font-size: 1.2rem; }
+#player p { margin: 4px 0; color: var(--muted); }
+
+.list { list-style: none; padding: 0; margin: 24px 0; display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.list button { width: 100%; text-align: left; font: inherit; color: inherit; background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 14px; cursor: pointer; }
+.list button:hover, .list button[aria-current="true"] { border-color: var(--accent); }
+.list strong { display: block; margin-bottom: 4px; }
+.list span { color: var(--muted); font-size: 0.9rem; }
+.error { color: #d93025; }

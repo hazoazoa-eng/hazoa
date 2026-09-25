@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>동영상 모음</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>동영상 모음</h1>
+  </header>
+
+  <main>
+    <section id="player" hidden>
+      <div class="frame">
+        <iframe id="player-frame" title="동영상 플레이어" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
+      <h2 id="player-title"></h2>
+      <p id="player-desc"></p>
+      <p><a id="player-link" target="_blank" rel="noopener">구글 드라이브에서 열기 ↗</a></p>
+    </section>
+
+    <ul id="list" class="list"></ul>
+    <p id="error" class="error" hidden></p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
