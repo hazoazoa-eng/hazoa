@@ -1,9 +1,15 @@
-// 구글 드라이브 공유 링크(또는 파일 ID)에서 파일 ID를 뽑아낸다.
-// 지원 형식: /file/d/ID/..., ?id=ID
-function driveId(url) {
-  if (!url || !/drive\.google\.com/.test(url)) return null;
-  const m = url.match(/\/file\/d\/([\w-]+)/) || url.match(/[?&]id=([\w-]+)/);
-  return m ? m[1] : null;
+// 링크가 동영상이면 페이지 안에 넣을 플레이어 주소를 돌려준다.
+// 구글 드라이브: /file/d/ID/..., ?id=ID   유튜브: youtu.be/ID, watch?v=ID, /shorts/ID, /live/ID
+function videoEmbed(url) {
+  if (!url) return null;
+  let m;
+  if (/drive\.google\.com/.test(url) && (m = url.match(/\/file\/d\/([\w-]+)/) || url.match(/[?&]id=([\w-]+)/))) {
+    return { src: `https://drive.google.com/file/d/${m[1]}/preview`, open: `https://drive.google.com/file/d/${m[1]}/view`, name: "구글 드라이브" };
+  }
+  if ((m = url.match(/youtu\.be\/([\w-]{11})/) || url.match(/youtube\.com\/(?:watch\?(?:.*&)?v=|shorts\/|live\/|embed\/)([\w-]{11})/))) {
+    return { src: `https://www.youtube-nocookie.com/embed/${m[1]}`, open: `https://youtu.be/${m[1]}`, name: "유튜브" };
+  }
+  return null;
 }
 
 const $ = (id) => document.getElementById(id);
@@ -38,7 +44,7 @@ function showList() {
   $("done").hidden = true;
 
   $("list").replaceChildren(...posts.map((p, i) => {
-    const videos = p.items.filter((it) => driveId(it.url)).length;
+    const videos = p.items.filter((it) => videoEmbed(it.url)).length;
     return el("li", {}, el("a", { href: `#${i + 1}` },
       el("span", { className: "n" }, String(i + 1)),
       el("span", { className: "t" }, p.title),
@@ -60,15 +66,17 @@ function showPost(n) {
   $("post-body").replaceChildren(...p.items.map((it) => {
     const box = el("div", { className: "item" });
     if (it.text) box.append(el("p", {}, it.text));
-    const id = driveId(it.url);
-    if (id) {
+    const video = videoEmbed(it.url);
+    if (video) {
       box.append(
         el("div", { className: "frame" }, el("iframe", {
-          src: `https://drive.google.com/file/d/${id}/preview`,
-          title: it.text || p.title, allow: "autoplay; fullscreen", allowFullscreen: true,
+          src: video.src, title: it.text || p.title,
+          allow: "autoplay; fullscreen; picture-in-picture", allowFullscreen: true,
         })),
-        el("a", { className: "open", href: `https://drive.google.com/file/d/${id}/view`, target: "_blank", rel: "noopener" },
-          "영상이 안 보이면 구글 드라이브에서 열기 ↗"));
+        el("a", { className: "open", href: video.open, target: "_blank", rel: "noopener" },
+          `영상이 안 보이면 ${video.name}에서 열기 ↗`));
+    } else if (it.video) {
+      box.append(el("div", { className: "frame pending" }, "영상 준비 중"));
     } else if (it.url) {
       box.append(el("a", { className: "url", href: it.url, target: "_blank", rel: "noopener" }, it.url));
     }
