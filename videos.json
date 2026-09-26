@@ -22,10 +22,10 @@
         {
           "title": "논리 2주차 살롱 : 강의안",
           "items": [
-            {"text": "🎬 녹화 영상 (논리 2회차)", "video": true, "url": ""},
             {"text": "오늘 강의안 - 논리 2회차 : 글은 어떻게 일이 되는가 (게 카논 · 무의 헌정)", "url": "https://clbookslower.github.io/deeper-salon/logic/l2_deck_2026-09-07.html"},
             {"text": "이번 주 과제 - 세 개의 악보 (각도 하나만 골라 악보 한 장)", "url": "https://clbookslower.github.io/deeper-salon/logic/l2_three_scores.html"},
-            {"text": "오늘 GEB 본문 - 2주차 : 게 카논 pp266-272 · 무의 헌정 pp312-332 (까치 개역판)\n· 2주차_게카논 pp266-272 (1of2).pdf\n· 2주차_게카논 pp266-272 (2of2).pdf\n· 2주차_무의헌정 pp312-332.pdf"}
+            {"text": "오늘 GEB 본문 - 2주차 : 게 카논 pp266-272 · 무의 헌정 pp312-332 (까치 개역판)\n· 2주차_게카논 pp266-272 (1of2).pdf\n· 2주차_게카논 pp266-272 (2of2).pdf\n· 2주차_무의헌정 pp312-332.pdf"},
+            {"text": "🎬 녹화 영상 (논리 2회차)", "video": true, "url": ""}
           ]
         }
       ]
@@ -37,12 +37,12 @@
           "title": "논리 3주차 살롱 : 강의안",
           "items": [
             {"text": "논리 3회차 · 나를 베끼지 말고 나를 낳아라 — 9/14(월) 밤 9시"},
-            {"text": "🎬 녹화 영상 (논리 3회차)", "video": true, "url": ""},
             {"text": "📚 오늘의 TRIVIUM — 두 대화편을 문법·논리·수사 세 계단으로", "url": "https://clbookslower.github.io/deeper-salon/logic/geb_smoker_magnificrab_trivium_2026-09-14.html"},
             {"text": "🌙 오늘 강의안(덱)", "url": "https://clbookslower.github.io/deeper-salon/logic/l3_deck_2026-09-14.html"},
             {"text": "📝 이번 주 과제 — 발행 고리 (한 편 + 고리 다섯 줄)", "url": "https://clbookslower.github.io/deeper-salon/logic/l3_publishing_loop.html"},
             {"text": "📖 오늘의 텍스트 (까치판) — 본문 PDF는 이 강의실 「Reading: 괴델, 에셔, 바흐」 자료실에 있어요.", "url": "https://geekus.kr/slowerdeeper/classroom/1074?lessonId=6086"},
-            {"text": "· 「어느 애연가의 교훈적 사색」 pp658−677\n· 「과연 위대한 게로다」 pp749−763"}
+            {"text": "· 「어느 애연가의 교훈적 사색」 pp658−677\n· 「과연 위대한 게로다」 pp749−763"},
+            {"text": "🎬 녹화 영상 (논리 3회차)", "video": true, "url": ""}
           ]
         }
       ]
@@ -54,11 +54,11 @@
           "title": "논리 4주차 살롱 : 강의안 (종강)",
           "items": [
             {"text": "논리 4회차 · 종강 — 하모니(창발) · 9/21(월) 밤 9시"},
-            {"text": "🎬 녹화 영상 (논리 4회차)", "video": true, "url": ""},
             {"text": "📚 오늘의 TRIVIUM — 열 개의 질문 · 나무늘보 카논을 문법·논리·수사 세 계단으로", "url": "https://clbookslower.github.io/deeper-salon/logic/geb_ai_prospects_sloth_trivium_2026-09-21.html"},
             {"text": "🌙 오늘 강의안(덱)", "url": "https://clbookslower.github.io/deeper-salon/logic/l4_deck_2026-09-21.html"},
             {"text": "📖 오늘의 텍스트 (까치판) — 본문 PDF는 이 강의실 「Reading: 괴델, 에셔, 바흐」 자료실에 있어요.", "url": "https://geekus.kr/slowerdeeper/classroom/1074?lessonId=6086"},
-            {"text": "· 「인공지능: 전망」 pp929−939\n· 「나무늘보 카논」 pp940−943"}
+            {"text": "· 「인공지능: 전망」 pp929−939\n· 「나무늘보 카논」 pp940−943"},
+            {"text": "🎬 녹화 영상 (논리 4회차)", "video": true, "url": ""}
           ]
         }
       ]
