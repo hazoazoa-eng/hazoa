@@ -8,10 +8,10 @@
         {
           "title": "논리 1주차 살롱 : 강의안",
           "items": [
-            {"text": "🎬 녹화 영상 (논리 1회차 · 88분 · 사막방 시간은 빼고)", "url": "https://youtu.be/CckwxdfhO5A"},
             {"text": "오늘 강의안 - 논리 1회차 : 기호는 어떻게 의미가 되는가", "url": "https://clbookslower.github.io/deeper-salon/logic/l1_deck_2026-08-31.html"},
             {"text": "이번 주 도구 - 스킬 여덟 : 뜻과 받는 법과 사용법", "url": "https://clbookslower.github.io/deeper-salon/logic/l1_tools_at_a_glance.html"},
-            {"text": "현장의 목소리 - 논리 1회차 : 규칙이 있어야 게임이 된다", "url": "https://clbookslower.github.io/deeper-salon/logic/l1_field_voices.html"}
+            {"text": "현장의 목소리 - 논리 1회차 : 규칙이 있어야 게임이 된다", "url": "https://clbookslower.github.io/deeper-salon/logic/l1_field_voices.html"},
+            {"text": "🎬 녹화 영상 (논리 1회차 · 88분 · 사막방 시간은 빼고) — 그날 함께하지 못하신 분을 위해 유튜브 일부 공개로 올려 둡니다. 링크 있는 분만 볼 수 있어요.", "video": true, "url": "https://youtu.be/CckwxdfhO5A"}
           ]
         }
       ]
