@@ -27,7 +27,11 @@ function saveDone(done) {
   try { localStorage.setItem("done", JSON.stringify([...done])); } catch {}
 }
 
-let posts = [];
+let posts = [];   // 모든 글을 한 줄로 편 것 (#번호는 이 순서)
+let groups = [];  // [{ title, posts }] 논리 단계별 묶음
+let loose = [];   // 묶음 없이 쓴 글 (예전 "posts" 형식)
+let reading = null;
+const openGroups = new Set();
 const done = loadDone();
 
 // 주소(#)로 화면을 바꾼다: # = 목록, #3 = 3번째 글
@@ -43,7 +47,8 @@ function showList() {
   $("back").hidden = true;
   $("done").hidden = true;
 
-  $("list").replaceChildren(...posts.map((p, i) => {
+  const row = (p) => {
+    const i = posts.indexOf(p);
     const videos = p.items.filter((it) => videoEmbed(it.url)).length;
     return el("li", {}, el("a", { href: `#${i + 1}` },
       el("span", { className: "n" }, String(i + 1)),
@@ -51,11 +56,34 @@ function showList() {
       done.has(p.title)
         ? el("span", { className: "v ok" }, "✓ 완료")
         : el("span", { className: "v" }, videos ? `▶ ${videos}` : "")));
-  }));
+  };
+
+  const rows = [];
+  if (reading) {
+    const t = reading.url
+      ? el("a", { href: reading.url, target: "_blank", rel: "noopener" }, reading.title)
+      : reading.title;
+    rows.push(el("li", { className: "reading" }, t));
+  }
+  // 논리 단계(Logic 1, 2, …)는 눌러서 펼치는 묶음으로 보여 준다
+  for (const g of groups) {
+    const d = el("details", { open: openGroups.has(g.title) },
+      el("summary", {}, g.title),
+      el("ul", {}, ...g.posts.map(row)));
+    d.addEventListener("toggle", () => {
+      if (d.open) openGroups.add(g.title); else openGroups.delete(g.title);
+    });
+    rows.push(el("li", { className: "group" }, d));
+  }
+  rows.push(...loose.map(row));
+  $("list").replaceChildren(...rows);
 }
 
 function showPost(n) {
   const p = posts[n - 1];
+  // 목록으로 돌아왔을 때 이 글이 든 묶음이 펼쳐져 있도록
+  const g = groups.find((g) => g.posts.includes(p));
+  if (g) openGroups.add(g.title);
   $("list").hidden = true;
   $("post").hidden = false;
   $("back").hidden = false;
@@ -97,7 +125,10 @@ async function main() {
   try {
     const res = await fetch("videos.json", { cache: "no-cache" });
     const data = await res.json();
-    posts = data.posts || [];
+    groups = data.groups || [];
+    loose = data.posts || [];
+    reading = data.reading || null;
+    posts = [...groups.flatMap((g) => g.posts), ...loose];
     if (data.board) {
       $("board").textContent = data.board;
       document.title = data.board;
