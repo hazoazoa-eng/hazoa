@@ -1,0 +1,392 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>긱어스 미러사이트</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
+<style id="galmuri-style">
+:root{
+  --bg:#F2F4EF; --surface:#FFFFFF; --ink:#1E2530; --muted:#5B6570; --line:#D8DDD4;
+  --accent:#2E4B7C; --accent-ink:#FFFFFF; --accent-soft:#E3E9F3;
+  --grain:#8A5E14; --grain-bg:#F3E7CD; --danger:#A33A2E; --focus:#2E4B7C;
+  --serif:"Gowun Batang","Nanum Myeongjo","Batang",serif;
+  --sans:"IBM Plex Sans KR","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#12161C; --surface:#1A2029; --ink:#E6E9ED; --muted:#9BA4AF; --line:#2B333E;
+    --accent:#93B2E8; --accent-ink:#0F1720; --accent-soft:#1F2B40;
+    --grain:#E2B862; --grain-bg:#36301F; --danger:#E88C80; --focus:#93B2E8;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12161C; --surface:#1A2029; --ink:#E6E9ED; --muted:#9BA4AF; --line:#2B333E;
+  --accent:#93B2E8; --accent-ink:#0F1720; --accent-soft:#1F2B40;
+  --grain:#E2B862; --grain-bg:#36301F; --danger:#E88C80; --focus:#93B2E8;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding-inline:20px;padding-block:40px 64px}
+a{color:var(--accent)}
+button,input,textarea,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:6px}
+
+.head{display:grid;gap:10px;margin-bottom:28px}
+.mark{font:500 12px/1 var(--sans);letter-spacing:.14em;color:var(--grain);text-transform:uppercase}
+.head h1{font:700 44px/1.1 var(--serif);margin:0;letter-spacing:-.01em}
+.head p{margin:0;color:var(--muted);max-width:60ch}
+.tally{font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px}
+
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:24px}
+.search{flex:1 1 220px;min-width:0;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 14px}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:9px 14px;cursor:pointer;white-space:nowrap;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:14px}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.video{background:var(--grain-bg);color:var(--grain);border-color:transparent;font-weight:600}
+.btn.video:hover{border-color:var(--grain)}
+.btn.ghost{background:transparent}
+.btn.danger{color:var(--danger)}
+.btn[disabled],.btn.off{opacity:.5;cursor:default;pointer-events:none}
+
+.notice{border:1px dashed var(--grain);background:var(--grain-bg);color:var(--ink);border-radius:12px;padding:12px 14px;margin-bottom:20px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.notice span{flex:1 1 240px}
+
+.group{margin-top:34px}
+.ghead{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+.ghead h2{font:700 24px/1.3 var(--serif);margin:0;text-wrap:balance}
+.ghead .count{color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums}
+.ghead .tools{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+.lecs{list-style:none;margin:0;padding:0}
+.lec{display:grid;grid-template-columns:1fr;gap:10px;align-items:start;padding:16px 0;border-bottom:1px solid var(--line)}
+.lec h3{font:600 16px/1.45 var(--sans);margin:0;text-wrap:balance}
+.lec .memo{margin:4px 0 0;color:var(--muted);font-size:14px;white-space:pre-wrap;overflow-wrap:anywhere}
+.lec .date{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.lec .sample{display:inline-block;font-size:11px;letter-spacing:.06em;border:1px solid var(--line);border-radius:999px;padding:1px 8px;margin-left:6px;color:var(--muted);vertical-align:2px}
+.acts{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-start}
+.editbar .acts{justify-content:flex-end}
+.empty{color:var(--muted);padding:16px 0;margin:0;font-size:14px}
+.items{display:grid;gap:18px;margin-top:12px}
+.item p{margin:0;font-size:15px;line-height:1.7;overflow-wrap:anywhere;white-space:pre-line}
+.vlink{display:block;width:fit-content;max-width:100%;color:var(--accent);text-decoration:none;font-size:15px;line-height:1.8;overflow-wrap:anywhere}
+.vlink:hover{text-decoration:underline}
+.vlink.off{color:var(--muted)}
+
+.form{background:var(--surface);border:1px solid var(--accent);border-radius:14px;padding:18px;margin:14px 0;display:grid;gap:12px}
+.form label{display:grid;gap:4px;font-size:13px;color:var(--muted)}
+.form input,.form textarea{border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:9px 12px;font-size:15px;color:var(--ink);width:100%}
+.form textarea{min-height:64px;resize:vertical}
+.form .row{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.form .err{color:var(--danger);font-size:13px;margin:0}
+.form .hint{font-size:12px;color:var(--muted)}
+.form .ftitle{margin:0;font:700 18px/1.3 var(--serif);color:var(--ink)}
+.form select{border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:9px 12px;font-size:15px;color:var(--ink);width:100%}
+.form textarea.body{min-height:180px}
+.lec .memo.clamp{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.more{border:0;background:none;padding:2px 0;color:var(--accent);cursor:pointer;font-size:13px;display:block}
+
+.editbar{position:sticky;bottom:calc(env(safe-area-inset-bottom,0px) + 12px);margin-top:28px;background:var(--ink);color:var(--bg);border-radius:14px;padding:12px 14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.editbar span{font-size:14px}
+.editbar .btn{background:var(--bg);color:var(--ink);border-color:transparent}
+.editbar .btn.primary{background:var(--grain-bg);color:var(--grain);font-weight:600}
+
+.foot{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;display:grid;gap:4px}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 80px);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:14px;max-width:calc(100% - 32px)}
+
+@media (max-width:560px){
+  .head h1{font-size:36px}
+  .lec{grid-template-columns:1fr}
+  .acts{justify-content:flex-start}
+  .ghead .tools{margin-left:0}
+}
+@media (prefers-reduced-motion: no-preference){
+  .btn{transition:border-color .15s}
+}
+</style>
+
+<main id="root" class="wrap"></main>
+<div id="toast" class="toast" role="status" hidden></div>
+
+<script type="application/json" id="galmuri-data">{"intro":"긱어스 강의실의 강의를 하나씩 따라가며, 노트북LM·제미나이·캡컷으로 만든 정리 영상을 모아 둔 곳입니다. 원문은 늘 긱어스에서 보시고, 여기서는 영상으로 한 번 더 갈무리합니다.","groups":[{"id":"g-grammar","name":"문법 단계","lectures":[]},{"id":"g-logic","name":"논리 단계","lectures":[{"id":"l-deeper-os","title":"디퍼 OS : 나만의 사막여우 길들이기","geekus":"","video":"","memo":"","date":"2026-09-27","items":[{"text":"📌 디퍼 OS가 무엇인가 — 한 장 소개\n우리가 만드는 시스템이 무엇인지, 방이 왜 둘인지,\n왜 쓸수록 정확해지는지를 그림과 함께 담았습니다.\n처음 오신 분도, 걷고 계신 분도 한 번 읽어두시면\n앞으로의 걸음이 훨씬 또렷해져요.","links":[{"label":"▶ 동영상 보기","url":"https://drive.google.com/file/d/1ygRunrRsjFQpmvyiZoyRaROsV32aZ0lh/view?usp=drivesdk"}]}]},{"id":"l-logic-01-post","title":"논리 1주차 살롱 : 강의안","geekus":"","video":"","memo":"","date":"2026-09-26","items":[{"text":"오늘 강의안 - 논리 1회차 : 기호는 어떻게 의미가 되는가","links":[{"label":"▶ 동영상 보기","url":"https://drive.google.com/file/d/1-FgrHv3hML1pO-uV4hXAINBDPOHe3DOs/view?usp=sharing"}]},{"text":"이번 주 도구 - 스킬 여덟 : 뜻과 받는 법과 사용법","links":[{"label":"▶ 동영상 보기","url":"https://drive.google.com/file/d/1XxzuEVHUfdF3hCcK1CgITeGQMS8m7k0J/view?usp=sharing"}]},{"text":"현장의 목소리 - 논리 1회차 : 규칙이 있어야 게임이 된다","links":[{"label":"▶ 동영상 보기","url":"https://drive.google.com/file/d/1XhUKS8H1oxOafOH_i54yzQR1WpeNw75_/view?usp=sharing"}]}]},{"id":"l-logic-02-post","title":"논리 2주차 살롱 : 강의안","geekus":"","video":"","memo":"","date":"2026-09-26","items":[{"text":"오늘 강의안 - 논리 2회차 : 글은 어떻게 일이 되는가 (게 카논 · 무의 헌정)","links":[{"label":"▶ 동영상 보기","url":"https://drive.google.com/file/d/1lb7sJuMhmiblDm2rHUy0Kp5bNUTA6tcK/view?usp=drivesdk"}]},{"text":"이번 주 과제 - 세 개의 악보 (각도 하나만 골라 악보 한 장)","links":[{"label":"▶ 동영상 보기","url":"https://drive.google.com/file/d/1HbRf_QlI1dgPjkU51TX1PNe_uSR1Kc-C/view?usp=drivesdk"}]},{"text":"오늘 GEB 본문 - 2주차 : 게 카논 pp266-272 · 무의 헌정 pp312-332 (까치 개역판)","links":[{"label":"▶ 2주차_게카논 pp266-272 (1of2)","url":"https://drive.google.com/file/d/1HbRf_QlI1dgPjkU51TX1PNe_uSR1Kc-C/view?usp=drivesdk"},{"label":"▶ 2주차_게카논 pp266-272 (2of2)","url":"https://drive.google.com/file/d/1QiWfVAqc_iv6GVu0-E8jsqY8ZbZoepmn/view?usp=drivesdk"},{"label":"▶ 2주차_무의헌정 pp312-332","url":"https://drive.google.com/file/d/1lGAu0QmHbJ2XS2vqrsrnllQkBagVouJ3/view?usp=drivesdk"}]},{"text":"현장의 목소리 - 논리 2회차 : 거꾸로 읽어도, 나인 글","links":[{"label":"▶ 동영상 보기","url":"https://drive.google.com/file/d/1iJD98mLbucILjgHeGk1CPrIJ9ljEx9eo/view?usp=drivesdk"}]}]},{"id":"l-logic-03-post","title":"논리 3주차 살롱 : 강의안","geekus":"","video":"","memo":"논리 3회차 · 나를 베끼지 말고 나를 낳아라 — 9/14(월) 밤 9시","date":"2026-09-27","items":[{"text":"📚 오늘의 TRIVIUM — 두 대화편을 문법·논리·수사 세 계단으로","links":[{"label":"▶ 동영상 보기","url":"https://drive.google.com/file/d/1i71UmniPt9dDAS2--mRKI9CJPVhKviUI/view?usp=drivesdk"}]},{"text":"🌙 오늘 강의안(덱)","links":[{"label":"▶ 동영상 보기","url":"https://drive.google.com/file/d/1QY4o0mwJK8wdBYhIiX4LmbviYIlYZQZ1/view?usp=drivesdk"}]},{"text":"📖 오늘의 텍스트 (까치판) — 본문 PDF는 이 강의실 「Reading: 괴델, 에셔, 바흐」 자료실에 있어요.\n· 「어느 애연가의 교훈적 사색」 pp658−677\n· 「과연 위대한 게로다」 pp749−763","links":[{"label":"▶ 동영상 보기","url":"https://drive.google.com/file/d/1LAIE55fmIJfNYmTeMQ2oZtMNRV3ZG1An/view?usp=drivesdk"}]},{"text":"현장의 목소리 - 논리 3회차","links":[{"label":"▶ 동영상 보기","url":"https://drive.google.com/file/d/1hQmLHXlYum0ftARukSiOjlihC81Gr8ZX/view?usp=drivesdk"}]}]},{"id":"l-logic-04-post","title":"논리 4주차 살롱 : 강의안 (종강)","geekus":"","video":"","memo":"논리 4회차 · 종강 — 하모니(창발) · 9/21(월) 밤 9시","date":"2026-09-27","items":[{"text":"🌙 오늘 강의안(덱)","links":[{"label":"▶ 동영상 보기","url":"https://drive.google.com/file/d/1RgdZ_AQw70-eUYSFSuYAFdYnH3EKLL2l/view?usp=drivesdk"}]},{"text":"📖 오늘의 텍스트 (까치판) — 본문 PDF는 이 강의실 「Reading: 괴델, 에셔, 바흐」 자료실에 있어요.\n· 「인공지능: 전망」 pp929−939\n· 「나무늘보 카논」 pp940−943","links":[{"label":"▶ 동영상 보기","url":"https://drive.google.com/file/d/1eda7bdO2_qfmvXVvE0fWkblaxealttct/view?usp=drivesdk"}]},{"text":"🗺️ 미리 읽어 두면 좋은 두 장","links":[{"label":"▶ 「대화를 멈추고 고리를 설계한다」","url":"https://drive.google.com/file/d/1USg7QmYLUPdQVE17k0Flbn0-BuPeSpZR/view?usp=drivesdk"},{"label":"▶ 「나만의 구조」","url":"https://drive.google.com/file/d/1yI7jsmcs_tjrbAsYfqpZzTMjuAIrcaZY/view?usp=drivesdk"}]}]}]},{"id":"g-rhetoric","name":"수사 단계","lectures":[]}]}</script>
+
+<script id="galmuri-main">
+(function(){
+  var FONT = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">';
+  var STASH = 'galmuri-draft';
+  var saved = JSON.parse(document.getElementById('galmuri-data').textContent);
+  var state = clone(saved);
+  var canEdit = false, editing = false, query = '';
+  var form = null;        // {gid, lid|null, kind:'lec'|'group'}
+  var confirmDel = null;  // key awaiting second click
+  var formErr = '';
+  var draftFound = null;
+  var expanded = {};      // lecture id -> body shown in full (this viewer only)
+  var root = document.getElementById('root');
+
+  function clone(o){ return JSON.parse(JSON.stringify(o)); }
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function isHttps(u){ return /^https:\/\//i.test(u || ''); }
+  function uid(p){ return p + Date.now().toString(36) + Math.random().toString(36).slice(2,6); }
+  function today(){ var d = new Date(); return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); }
+  function dirty(){ return JSON.stringify(state) !== JSON.stringify(saved); }
+  function findGroup(gid){ return state.groups.filter(function(g){ return g.id === gid; })[0]; }
+  function toast(msg){
+    var t = document.getElementById('toast'); t.textContent = msg; t.hidden = false;
+    clearTimeout(toast._t); toast._t = setTimeout(function(){ t.hidden = true; }, 3200);
+  }
+
+  try {
+    var d = sessionStorage.getItem(STASH);
+    if (d) { if (d === JSON.stringify(saved)) sessionStorage.removeItem(STASH); else draftFound = JSON.parse(d); }
+  } catch (e) {}
+
+  function vids(l){
+    if (!l.items) return isHttps(l.video) ? 1 : 0;
+    var n = 0; l.items.forEach(function(it){ (it.links || []).forEach(function(k){ if (isHttps(k.url)) n++; }); }); return n;
+  }
+  function itemsHtml(l){
+    return '<div class="items">' + l.items.map(function(it){
+      return '<div class="item"><p>' + esc(it.text) + '</p>' + (it.links || []).map(function(k){
+        return isHttps(k.url) ? '<a class="vlink" href="' + esc(k.url) + '" target="_blank" rel="noopener">' + esc(k.label) + '</a>' : '<span class="vlink off">' + esc(k.label) + ' (영상 준비 중)</span>';
+      }).join('') + '</div>';
+    }).join('') + '</div>';
+  }
+
+  function matches(l){
+    if (!query) return true;
+    var q = query.toLowerCase();
+    return (l.title + ' ' + (l.memo || '') + ' ' + (l.items || []).map(function(it){ return it.text; }).join(' ')).toLowerCase().indexOf(q) !== -1;
+  }
+
+  function lecForm(gid, l){
+    var isNew = !l;
+    l = l || {title:'', geekus:'', video:'', memo:''};
+    var opts = state.groups.map(function(g){
+      return '<option value="' + esc(g.id) + '"' + (g.id === gid ? ' selected' : '') + '>' + esc(g.name) + '</option>';
+    }).join('');
+    return '<div class="form" data-form>' +
+      '<p class="ftitle">' + (isNew ? '✏️ 새 글쓰기' : '✏️ 글 고치기') + '</p>' +
+      '<label>제목<input id="f-title" value="' + esc(l.title) + '" placeholder="예: 논리 3주차 — 원천을 설계도로"></label>' +
+      '<label>단원<select id="f-group">' + opts + '</select></label>' +
+      '<label>본문<textarea id="f-memo" class="body" placeholder="이 영상에서 다룬 내용, 볼 점, 만든 도구(노트북LM·제미나이·캡컷) 등을 자유롭게 적어 주세요.">' + esc(l.memo) + '</textarea></label>' +
+      '<label>🎬 동영상 링크 (구글 드라이브)<input id="f-video" value="' + esc(l.video) + '" placeholder="https://drive.google.com/file/d/…/view"></label>' +
+      '<span class="hint">① 드라이브에 영상 올리기 → ② 영상 오른쪽 클릭 → 공유 → <b>링크 복사</b> → ③ 여기에 붙여 넣기. 비워 두면 “영상 준비 중”으로 보입니다.</span>' +
+      '<label>긱어스 원문 링크 (선택)<input id="f-geekus" value="' + esc(l.geekus) + '" placeholder="https://… 긱어스 강의 주소"></label>' +
+      (formErr ? '<p class="err">' + esc(formErr) + '</p>' : '') +
+      '<div class="row"><button class="btn ghost" data-act="cancel">취소</button><button class="btn primary" data-act="save-lec" data-g="' + esc(gid) + '">' + (isNew ? '글 올리기' : '고친 내용 넣기') + '</button></div>' +
+    '</div>';
+  }
+
+  function groupForm(g){
+    return '<div class="form" data-form>' +
+      '<label>단원 이름<input id="f-gname" value="' + esc(g ? g.name : '') + '" placeholder="예: 논리 단계"></label>' +
+      (formErr ? '<p class="err">' + esc(formErr) + '</p>' : '') +
+      '<div class="row"><button class="btn ghost" data-act="cancel">취소</button><button class="btn primary" data-act="save-group">넣기</button></div>' +
+    '</div>';
+  }
+
+  function render(){
+    var total = 0, withVideo = 0;
+    state.groups.forEach(function(g){ g.lectures.forEach(function(l){ total++; withVideo += vids(l); }); });
+
+    var h = '';
+    h += '<header class="head"><span class="mark">긱어스 멤버 전용 · 정리 영상</span><h1>긱어스 미러사이트</h1>' +
+         '<p>' + esc(state.intro) + '</p>' +
+         '<span class="tally">강의 ' + total + '개 · 영상 ' + withVideo + '편</span></header>';
+
+    if (canEdit && draftFound && !editing) {
+      h += '<div class="notice"><span>저장하지 못한 편집이 이 브라우저에 남아 있습니다.</span>' +
+           '<button class="btn" data-act="restore">불러오기</button><button class="btn ghost" data-act="drop-draft">버리기</button></div>';
+    }
+
+    h += '<div class="bar"><input id="q" class="search" type="search" placeholder="강의 이름이나 메모로 찾기" value="' + esc(query) + '" aria-label="강의 찾기">';
+    if (canEdit) {
+      h += '<button class="btn primary" data-act="write">✏️ 글쓰기</button>';
+      h += editing ? '<button class="btn" data-act="add-group">＋ 단원 추가</button>' : '<button class="btn" data-act="edit-on">편집하기</button>';
+    }
+    h += '</div>';
+
+    if (editing && form && form.kind === 'group' && !form.gid) h += groupForm(null);
+    if (editing && form && form.kind === 'lec' && !form.lid && form.top) h += lecForm(form.gid, null);
+
+    state.groups.forEach(function(g, gi){
+      var shown = g.lectures.filter(matches);
+      if (query && !shown.length && !editing) return;
+      var nv = g.lectures.reduce(function(a, l){ return a + vids(l); }, 0);
+      h += '<section class="group"><div class="ghead"><h2>' + esc(g.name) + '</h2><span class="count">강의 ' + g.lectures.length + ' · 영상 ' + nv + '</span>';
+      if (editing) {
+        var dk = 'g:' + g.id;
+        h += '<div class="tools">' +
+          (gi > 0 ? '<button class="btn ghost" data-act="g-up" data-g="' + esc(g.id) + '" aria-label="위로">↑</button>' : '') +
+          '<button class="btn ghost" data-act="rename-group" data-g="' + esc(g.id) + '">이름 바꾸기</button>' +
+          '<button class="btn ghost danger" data-act="del-group" data-g="' + esc(g.id) + '">' + (confirmDel === dk ? '정말 지울까요?' : '단원 지우기') + '</button>' +
+          '<button class="btn" data-act="add-lec" data-g="' + esc(g.id) + '">✏️ 이 단원에 글쓰기</button></div>';
+      }
+      h += '</div>';
+      if (editing && form && form.kind === 'group' && form.gid === g.id) h += groupForm(g);
+      if (editing && form && form.kind === 'lec' && form.gid === g.id && !form.lid && !form.top) h += lecForm(g.id, null);
+
+      if (!shown.length) h += '<p class="empty">' + (query ? '찾는 강의가 없습니다.' : '아직 올린 강의가 없습니다.') + '</p>';
+      h += '<ul class="lecs">';
+      shown.forEach(function(l, li){
+        if (editing && form && form.kind === 'lec' && form.lid === l.id) { h += '<li>' + lecForm(g.id, l) + '</li>'; return; }
+        var dk = 'l:' + l.id;
+        var long = (l.memo || '').length > 140 || (l.memo || '').split('\n').length > 3;
+        var open = expanded[l.id];
+        h += '<li class="lec"><div><h3>' + esc(l.title) + (l.sample ? '<span class="sample">예시</span>' : '') + '</h3>' +
+             (l.memo ? '<p class="memo' + (long && !open ? ' clamp' : '') + '">' + esc(l.memo) + '</p>' : '') +
+             (long ? '<button class="more" data-act="more" data-l="' + esc(l.id) + '">' + (open ? '접기' : '더 보기') + '</button>' : '') +
+             (l.items ? itemsHtml(l) : '') +
+             (l.date ? '<span class="date">' + esc(l.date) + '</span>' : '') + '</div><div class="acts">';
+        if (editing) {
+          if (li > 0 && !query) h += '<button class="btn ghost" data-act="l-up" data-g="' + esc(g.id) + '" data-l="' + esc(l.id) + '" aria-label="위로">↑</button>';
+          h += '<button class="btn ghost" data-act="edit-lec" data-g="' + esc(g.id) + '" data-l="' + esc(l.id) + '">고치기</button>' +
+               '<button class="btn ghost danger" data-act="del-lec" data-g="' + esc(g.id) + '" data-l="' + esc(l.id) + '">' + (confirmDel === dk ? '정말 지울까요?' : '지우기') + '</button>';
+        } else if (!l.items) {
+          h += isHttps(l.video) ? '<a class="btn video" href="' + esc(l.video) + '" target="_blank" rel="noopener">▶ 동영상 보기</a>' : '<span class="btn off">영상 준비 중</span>';
+          if (isHttps(l.geekus)) h += '<a class="btn" href="' + esc(l.geekus) + '" target="_blank" rel="noopener">긱어스 원문</a>';
+        }
+        h += '</div></li>';
+      });
+      h += '</ul></section>';
+    });
+
+    if (editing) {
+      h += '<div class="editbar"><span>' + (dirty() ? '바뀐 내용이 있습니다. 저장해야 멤버들에게 보입니다.' : '편집 중 — 아직 바뀐 것이 없습니다.') + '</span>' +
+           '<span class="acts"><button class="btn" data-act="edit-off">' + (dirty() ? '바뀐 것 버리기' : '편집 마치기') + '</button>' +
+           '<button class="btn primary" data-act="publish"' + (dirty() ? '' : ' disabled') + '>저장하고 게시</button></span></div>';
+    }
+
+    h += '<footer class="foot"><span>영상은 구글 드라이브에서 열립니다. 드라이브 공유 설정에 따라 구글 로그인이 필요할 수 있습니다.</span>' +
+         '<span>긱어스 멤버끼리 나누는 공간입니다. 링크와 영상을 밖으로 옮기지 말아 주세요.</span></footer>';
+
+    var focusId = document.activeElement && document.activeElement.id;
+    var caret = focusId === 'q' ? document.activeElement.selectionStart : null;
+    root.innerHTML = h;
+    if (focusId === 'q') { var q = document.getElementById('q'); q.focus(); try { q.setSelectionRange(caret, caret); } catch (e) {} }
+    var first = root.querySelector('[data-form] input');
+    if (first && focusId !== 'q' && render._focusForm) { first.focus(); render._focusForm = false; }
+  }
+
+  function openForm(f){ form = f; formErr = ''; confirmDel = null; render._focusForm = true; render(); }
+
+  root.addEventListener('input', function(e){ if (e.target.id === 'q') { query = e.target.value.trim(); render(); } });
+
+  root.addEventListener('click', function(e){
+    var b = e.target.closest('[data-act]'); if (!b) return;
+    var act = b.getAttribute('data-act'), gid = b.getAttribute('data-g'), lid = b.getAttribute('data-l');
+    var g = gid ? findGroup(gid) : null;
+    if (act !== 'del-lec' && act !== 'del-group') confirmDel = null;
+
+    if (act === 'more') { expanded[lid] = !expanded[lid]; render(); }
+    else if (act === 'write') {
+      if (!state.groups.length) { editing = true; openForm({kind:'group', gid:null}); toast('먼저 단원을 하나 만들어 주세요.'); return; }
+      editing = true; openForm({kind:'lec', gid:state.groups[0].id, lid:null, top:true});
+    }
+    else if (act === 'edit-on') { editing = true; render(); }
+    else if (act === 'edit-off') { state = clone(saved); editing = false; form = null; render(); }
+    else if (act === 'add-group') openForm({kind:'group', gid:null});
+    else if (act === 'rename-group') openForm({kind:'group', gid:gid});
+    else if (act === 'add-lec') openForm({kind:'lec', gid:gid, lid:null});
+    else if (act === 'edit-lec') openForm({kind:'lec', gid:gid, lid:lid});
+    else if (act === 'cancel') { form = null; formErr = ''; render(); }
+    else if (act === 'save-group') {
+      var name = document.getElementById('f-gname').value.trim();
+      if (!name) { formErr = '단원 이름을 적어 주세요.'; render(); return; }
+      if (form.gid) findGroup(form.gid).name = name; else state.groups.push({id:uid('g'), name:name, lectures:[]});
+      form = null; formErr = ''; render();
+    }
+    else if (act === 'save-lec') {
+      var v = {
+        title: document.getElementById('f-title').value.trim(),
+        geekus: document.getElementById('f-geekus').value.trim(),
+        video: document.getElementById('f-video').value.trim(),
+        memo: document.getElementById('f-memo').value.trim()
+      };
+      var target = findGroup(document.getElementById('f-group').value) || g;
+      if (!v.title) formErr = '제목을 적어 주세요.';
+      else if (v.geekus && !isHttps(v.geekus)) formErr = '긱어스 링크는 https:// 로 시작해야 합니다.';
+      else if (v.video && !isHttps(v.video)) formErr = '영상 링크는 https:// 로 시작해야 합니다. 드라이브의 “링크 복사”를 그대로 붙여 넣으세요.';
+      else formErr = '';
+      if (formErr) {
+        render();
+        ['title','geekus','video','memo'].forEach(function(k){ var el = document.getElementById('f-' + k); if (el) { if (el.tagName === 'TEXTAREA') el.textContent = v[k]; el.value = v[k]; } });
+        var sel = document.getElementById('f-group'); if (sel) sel.value = target.id;
+        return;
+      }
+      if (form.lid) {
+        var l = g.lectures.filter(function(x){ return x.id === form.lid; })[0];
+        l.title = v.title; l.geekus = v.geekus; l.video = v.video; l.memo = v.memo; delete l.sample;
+        if (target !== g) { g.lectures = g.lectures.filter(function(x){ return x.id !== l.id; }); target.lectures.push(l); }
+      } else {
+        v.id = uid('l'); v.date = today(); target.lectures.push(v);
+      }
+      form = null; render();
+      toast('글을 넣었습니다. 아래 “저장하고 게시”를 눌러야 멤버들에게 보입니다.');
+    }
+    else if (act === 'del-lec') {
+      if (confirmDel !== 'l:' + lid) { confirmDel = 'l:' + lid; render(); return; }
+      g.lectures = g.lectures.filter(function(x){ return x.id !== lid; }); confirmDel = null; render();
+    }
+    else if (act === 'del-group') {
+      if (confirmDel !== 'g:' + gid) { confirmDel = 'g:' + gid; render(); return; }
+      state.groups = state.groups.filter(function(x){ return x.id !== gid; }); confirmDel = null; render();
+    }
+    else if (act === 'g-up') {
+      var i = state.groups.indexOf(g); if (i > 0) { state.groups.splice(i, 1); state.groups.splice(i - 1, 0, g); } render();
+    }
+    else if (act === 'l-up') {
+      var j = -1; g.lectures.forEach(function(x, k){ if (x.id === lid) j = k; });
+      if (j > 0) { var m = g.lectures.splice(j, 1)[0]; g.lectures.splice(j - 1, 0, m); } render();
+    }
+    else if (act === 'restore') { state = draftFound; draftFound = null; editing = true; render(); }
+    else if (act === 'drop-draft') { draftFound = null; try { sessionStorage.removeItem(STASH); } catch (e2) {} render(); }
+    else if (act === 'publish') publish();
+  });
+
+  function buildDoc(s){
+    var css = document.getElementById('galmuri-style').textContent;
+    var js = document.getElementById('galmuri-main').textContent;
+    var data = JSON.stringify(s).replace(/</g, '\\u003c');
+    return '<!doctype html>\n<html lang="ko"><head><meta charset="utf-8">' +
+      '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">' +
+      '<title>긱어스 미러사이트</title>' + FONT +
+      '<style id="galmuri-style">' + css + '</style></head><body>' +
+      '<main id="root" class="wrap"></main><div id="toast" class="toast" role="status" hidden></div>' +
+      '<script type="application/json" id="galmuri-data">' + data + '<\/script>' +
+      '<script id="galmuri-main">' + js + '<\/script></body></html>';
+  }
+
+  function publish(){
+    if (form) { toast('열려 있는 입력칸을 먼저 “넣기”나 “취소”로 닫아 주세요.'); return; }
+    var btn = root.querySelector('[data-act="publish"]'); if (btn) { btn.disabled = true; btn.textContent = '저장하는 중…'; }
+    var use = window.claude && window.claude.use;
+    if (!use) { toast('이 화면에서는 저장할 수 없습니다.'); render(); return; }
+    try { sessionStorage.setItem(STASH, JSON.stringify(state)); } catch (e) {}
+    window.claude.use('artifact').then(function(art){
+      if (!art) throw {code:'not_granted'};
+      return art.publish(buildDoc(state));
+    }).then(function(){
+      toast('저장했습니다. 새 판으로 다시 불러옵니다.');
+    }).catch(function(err){
+      var c = err && err.code;
+      if (c === 'conflict') { toast('다른 곳에서 먼저 저장되어 최신 판을 불러옵니다. 편집은 “불러오기”로 되살릴 수 있습니다.'); return; }
+      if (c === 'not_writer' || c === 'not_granted' || c === 'not_declared' || c === 'consent_required' || c === 'capability_disabled') {
+        canEdit = false; editing = false; toast('이 화면은 읽기 전용이라 저장할 수 없습니다.'); render(); return;
+      }
+      if (c === 'rate_limited') { toast('저장이 너무 잦습니다. 잠시 뒤 다시 눌러 주세요.'); render(); return; }
+      toast('저장하지 못했습니다. 잠시 뒤 다시 눌러 주세요.'); render();
+    });
+  }
+
+  render();
+
+  if (window.claude && window.claude.use) {
+    window.claude.use('user').then(function(u){ return u ? u.canEdit() : false; })
+      .then(function(ok){ if (ok) { canEdit = true; render(); } })
+      .catch(function(){});
+  }
+})();
+</script>
+
+</body></html>
