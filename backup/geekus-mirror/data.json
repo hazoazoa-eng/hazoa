@@ -11,6 +11,65 @@
       "name": "논리 단계",
       "lectures": [
         {
+          "id": "l-geb-reading",
+          "title": "Reading: 괴델, 에셔, 바흐",
+          "geekus": "",
+          "video": "",
+          "memo": "",
+          "date": "2026-09-27",
+          "items": [
+            {
+              "text": "자료",
+              "links": [
+                {
+                  "label": "▶ 1주차_GEB 서문 전체",
+                  "url": "https://drive.google.com/file/d/1EcF0VAhT7MotRtCX_yKBfpV9RUR7kwFw/view?usp=drivesdk"
+                },
+                {
+                  "label": "▶ 1주차_GEB 서론 음악논리학의헌정 pp3-38 (1of2)",
+                  "url": "https://drive.google.com/file/d/1EWtO22sNHYrmwdDIgU6R3stK2jyC7Kfw/view?usp=drivesdk"
+                },
+                {
+                  "label": "▶ 1주차_GEB 서론 음악논리학의헌정 pp3-38 (2of2)",
+                  "url": "https://drive.google.com/file/d/1EcF0VAhT7MotRtCX_yKBfpV9RUR7kwFw/view?usp=drivesdk"
+                },
+                {
+                  "label": "▶ 1주차_GEB 두성인벤션 1장 세성인벤션 pp39-62",
+                  "url": "https://drive.google.com/file/d/1F0I-8b_Q1jNLg9ckBByxLK2ztxHOqQWy/view?usp=drivesdk"
+                },
+                {
+                  "label": "▶ 2주차_게카논 pp266-272 (1of2)",
+                  "url": "https://drive.google.com/file/d/1HbRf_QlI1dgPjkU51TX1PNe_uSR1Kc-C/view?usp=drivesdk"
+                },
+                {
+                  "label": "▶ 2주차_게카논 pp266-272 (2of2)",
+                  "url": "https://drive.google.com/file/d/1QiWfVAqc_iv6GVu0-E8jsqY8ZbZoepmn/view?usp=drivesdk"
+                },
+                {
+                  "label": "▶ 2주차_무의헌정 pp312-332",
+                  "url": "https://drive.google.com/file/d/1lGAu0QmHbJ2XS2vqrsrnllQkBagVouJ3/view?usp=drivesdk"
+                },
+                {
+                  "label": "▶ 3주차_어느애연가의교훈적인사색 pp658-677",
+                  "url": "https://drive.google.com/file/d/1IRqoPjOLFBTIjCDQ0Z7lbzz6FywJ_I2J/view?usp=drivesdk"
+                },
+                {
+                  "label": "▶ 3주차_과연위대한게로다 pp749-763",
+                  "url": "https://drive.google.com/file/d/1OQgG4uUIUOShVRVLhUvjnBuHOhgDlTjF/view?usp=drivesdk"
+                },
+                {
+                  "label": "▶ 4주차_인공지능전망 pp929-939",
+                  "url": "https://drive.google.com/file/d/1efjF1tLbj2AgY_2Jq3VouEE44DjnVonJ/view?usp=drivesdk"
+                },
+                {
+                  "label": "▶ 4주차_나무늘보카논 pp940-943",
+                  "url": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
           "id": "l-deeper-os",
           "title": "디퍼 OS : 나만의 사막여우 길들이기",
           "geekus": "",
@@ -42,7 +101,7 @@
               "links": [
                 {
                   "label": "▶ 동영상 보기",
-                  "url": "https://drive.google.com/file/d/1-FgrHv3hML1pO-uV4hXAINBDPOHe3DOs/view?usp=sharing"
+                  "url": "https://drive.google.com/file/d/1NTkwnGQ1QyQzlWARNPb5oRdnI8vsv6bT/view?usp=drivesdk"
                 }
               ]
             },
