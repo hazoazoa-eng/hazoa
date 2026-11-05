@@ -1,0 +1,35 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,Pretendard ExtraBold,66,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,4,0,1,0,2,5,0,0,0,1
+Style: Band,Pretendard ExtraBold,10,&H38181818,&H38181818,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.20,0:00:03.85,Band,,0,0,0,,{\fad(180,180)\pos(0,0)\p1}m 0 1500 l 1080 1500 l 1080 1800 l 0 1800{\p0}
+Dialogue: 1,0:00:00.20,0:00:03.85,Sub,,0,0,0,,{\fad(180,180)\pos(540,1600)}바닷가 작은 마을,
+Dialogue: 1,0:00:00.20,0:00:03.85,Sub,,0,0,0,,{\fad(180,180)\pos(540,1700)}딸기 향으로 아침을 여는 가게
+Dialogue: 0,0:00:04.20,0:00:07.85,Band,,0,0,0,,{\fad(180,180)\pos(0,0)\p1}m 0 1500 l 1080 1500 l 1080 1800 l 0 1800{\p0}
+Dialogue: 1,0:00:04.20,0:00:07.85,Sub,,0,0,0,,{\fad(180,180)\pos(540,1600)}그는 매일 같은 자리에서
+Dialogue: 1,0:00:04.20,0:00:07.85,Sub,,0,0,0,,{\fad(180,180)\pos(540,1700)}시트를 살핍니다
+Dialogue: 0,0:00:08.20,0:00:11.85,Band,,0,0,0,,{\fad(180,180)\pos(0,0)\p1}m 0 1500 l 1080 1500 l 1080 1800 l 0 1800{\p0}
+Dialogue: 1,0:00:08.20,0:00:11.85,Sub,,0,0,0,,{\fad(180,180)\pos(540,1600)}그녀는 딸기를 한 알씩 올려
+Dialogue: 1,0:00:08.20,0:00:11.85,Sub,,0,0,0,,{\fad(180,180)\pos(540,1700)}마무리하죠
+Dialogue: 0,0:00:12.20,0:00:15.85,Band,,0,0,0,,{\fad(180,180)\pos(0,0)\p1}m 0 1500 l 1080 1500 l 1080 1800 l 0 1800{\p0}
+Dialogue: 1,0:00:12.20,0:00:15.85,Sub,,0,0,0,,{\fad(180,180)\pos(540,1600)}하얀 작은 집,
+Dialogue: 1,0:00:12.20,0:00:15.85,Sub,,0,0,0,,{\fad(180,180)\pos(540,1700)}창가에 나란히 선 두 사람
+Dialogue: 0,0:00:16.20,0:00:19.85,Band,,0,0,0,,{\fad(180,180)\pos(0,0)\p1}m 0 1500 l 1080 1500 l 1080 1800 l 0 1800{\p0}
+Dialogue: 1,0:00:16.20,0:00:19.85,Sub,,0,0,0,,{\fad(180,180)\pos(540,1600)}그리고 어느 밤,
+Dialogue: 1,0:00:16.20,0:00:19.85,Sub,,0,0,0,,{\fad(180,180)\pos(540,1700)}누군가 이 가게를 바라봅니다
+Dialogue: 0,0:00:20.20,0:00:23.85,Band,,0,0,0,,{\fad(180,180)\pos(0,0)\p1}m 0 1500 l 1080 1500 l 1080 1800 l 0 1800{\p0}
+Dialogue: 1,0:00:20.20,0:00:23.85,Sub,,0,0,0,,{\fad(180,180)\pos(540,1600)}계절이 바뀌어도
+Dialogue: 1,0:00:20.20,0:00:23.85,Sub,,0,0,0,,{\fad(180,180)\pos(540,1700)}사람들은 이곳을 찾아옵니다
+Dialogue: 0,0:00:24.20,0:00:27.85,Band,,0,0,0,,{\fad(180,180)\pos(0,0)\p1}m 0 1500 l 1080 1500 l 1080 1800 l 0 1800{\p0}
+Dialogue: 1,0:00:24.20,0:00:27.85,Sub,,0,0,0,,{\fad(180,180)\pos(540,1600)}이 가게엔, 아직
+Dialogue: 1,0:00:24.20,0:00:27.85,Sub,,0,0,0,,{\fad(180,180)\pos(540,1700)}말하지 않은 이야기가 있습니다
